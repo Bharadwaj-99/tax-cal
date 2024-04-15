@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tax Calculator</title>
+    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <div class="wrapper">
+        <div class="form-wrapper">
+          <form id="taxCalculatorForm">
+            <div class="input-container">
+              <label for="grossAnnualIncome"
+                >Gross Annual Income <i class="bi bi-question-circle"></i
+              ></label>
+              <input
+                type="text"
+                placeholder="Enter Gross annual income"
+                id="grossAnnualIncome"
+                
+              />
+              <span class="error" data-tooltip="Enter number only"
+                ><i class="bi bi-exclamation-circle"></i>
+              </span>
+            </div>
+            
+            <div class="input-container">
+              <label for="extraIncome"
+                >Extra Income <i class="bi bi-question-circle"></i
+              ></label>
+              <input
+                type="text"
+                id="extraIncome"
+                placeholder="Enter extra income from other sources"
+                
+              />
+              <span class="error" data-tooltip="Enter number only"
+                ><i class="bi bi-exclamation-circle"></i
+              ></span>
+            </div>
+            <div class="input-container">
+              <label for="age">Age:</label>
+              <select id="age">
+                <option value="">Select age group</option>
+                <option value="<40">&lt;40</option>
+                <option value=">=40&<60">≥40 &amp; &lt;60</option>
+                <option value=">=60">≥60</option>
+              </select>
+              <span class="error" data-tooltip="Age is required"
+                ><i class="bi bi-exclamation-circle"></i
+              ></span>
+            </div>
+            <div class="input-container">
+              <label for="deductions"
+                >Deductions <i class="bi bi-question-circle"></i
+              ></label>
+              <input type="text" id="deductions"  placeholder="Enter total deductions"/>
+              <span class="error" data-tooltip="Enter number only"
+                ><i class="bi bi-exclamation-circle"></i
+              ></span>
+            </div>
+            <span
+              class="error-icon"
+              data-tooltip="Please select an age group"
+            ></span>
+            <button class="submit-btn" type="submit">Submit</button>
+          </form>
+
+          <div id="taxResult" class="modal">
+            <div class="modal-content">
+              <p><h1>Your overall income will be </h1><span id="taxAmount"></span> <p>after tax deductions</p></p>
+              <button class="close-btn">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
